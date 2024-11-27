@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Links a BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!--Link a CSS-->
+    <link rel="stylesheet" href="CSS/estilos.css">
+
+    <!--Link a tipografía POPPINS de la referencia-->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+
+    <title>Trabajo práctico HTML - CSS: One-Page</title>
+</head>
+
+<body>
+
+    <!-- Encabezado -->
+    <header>
+
+        <nav class="navbar">
+
+            <!--Logo-->
+            <div class="logo">
+                <img src="imagenes/imagen-logo.png" alt="Imagen logo" id="logo-header">
+            </div>
+
+            <!-- Menu de navegacion -->
+
+        <div class="nav" id="nav">
+            <ul class="nav-links">
+                <button id="cerrar" class="cerrar-menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                    </svg>
+                </i></button>
+
+                <li><a href="#">Classes</a></li>
+                <li><a href="#">Private events</a></li>
+                <li><a href="#">Gift cards</a></li>
+                <li><a href="#">Faq</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">More</a></li>
+            </ul>
+        </div>
+
+            <!--Botón claro/oscuro-->
+            <div class="contenedor">
+                <button id="boton-modo">🌙</button>
+            </div>
+
+            <!--Iconos-->
+            <div class="nav-icons">
+
+                <!--Icono 1 lupa-->
+                <div class="icono">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M10.5 17.5c1.57 0 3.02-.53 4.18-1.4l4.11 
+                    4.11 1.41-1.41-4.11-4.11a7 7 0 1 0-12.6-4.18 7 7 0 0 0 7.01 6.99Zm0-12a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"></path></svg>
+                </div>
+
+                <!--Icono 2 usuario-->
+                <div class="icono">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M14 7a2 2 0 0 0-2-2 
+                    2 2 0 0 0-2 2c0 1.1.9 2 2 2a2 2 0 0 0 2-2ZM8 7a4 4 0 1 1 8 0 4 4 0 0 1-8 0Zm10 14h2a8.01 8.01 0 0 0-16 0h2a6 6 0 0 1 12 0Z" clip-rule="evenodd"></path></svg>
+                </div>
+
+                <!--Icono 3 carrito-->
+                <div class="icono">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 14a1 1 0 0 0-1 1 
+                    1 1 0 0 0 1 1h13v2H7a2.98 2.98 0 0 1-1.33-5.67L4 4H2V2h6v2h12l-2 10H7Zm9.36-2 1.2-6H6.44l1.2 6h8.72ZM7.5 22a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm9 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" clip-rule="evenodd"></path></svg>
+                </div>
+
+            </div>
+
+            <!-- Boton hamburguesa -->
+            <button id="abrir" class="abrir-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                </svg>
+            </i></button>
+            
+        </nav>
+
+
+        <!-- Contenido del hero con Bootstrap-->
+        <section class="hero-contenido" id="hero"> 
+            <div class="container">
+
+                <div class="row align-items-center h-100">
+                    <div>
+                      <!-- Titulo -->
+                      <h1 class="titulo col-4">A pottery studio dedicated to creativity and community.</h1>
+                      <!-- Boton -->
+                      <a href="#" class="hero-boton">Take a class</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Clases de Bootstrap 
+        container: Centra el contenido con ancho fijo.
+        row: Crea una fila para columnas.
+        align-items-center: Centra verticalmente los elementos en la fila.
+        h-100: Altura de la fila al 100% del contenedor padre.
+        col-4: Ocupa 4 de 12 columnas (1/3 del ancho total) -->
+
+    </header>
+
+    <main>
+
+        <!-- Seccion Descripcion -->
+        <section class="descripcion">
+            <p>Sarah Glass Ceramics is a woman-owned pottery studio located in Fort Lauderdale. Our mission is to provide everyone of all skill levels a strong foundation 
+            and supportive environment to experience the relaxing art of pottery making. We are happy to provide studio space and equipment to let you channel your inner artist.</p>
+            <a href="#">Learn more</a>
+        </section>
+
+        <!-- Galeria titulo y parrafo-->
+        <section class="galeria-titulo">
+            <h2>Featured Classes</h2>
+            <p>We offer classes and workshops for everyone of all skill levels.</p>
+        </section>
+        
+        <!-- Galeria de imagenes -->
+        <section class="galeria">
+
+                <!--Imagen 1-->
+                <div class="class-item">
+                  <img src="IMAGENES/imagen-galeria1.jpg" alt="Imagen 1" class="img">
+                  <h5>March One Time Pottery Wheel Throwing Class (Beginners/Intermiate)</h5>
+                  <p>$95.00</p>
+                </div>
+      
+                <!--Imagen 2-->
+                <div class="class-item">
+                  <img src="IMAGENES/imagen-galeria2.jpg" alt="Imagen 2" class="img">
+                  <h5>Ceramic Glazing Experience</h5>
+                  <p>$50.00</p>
+                </div>
+      
+                <!--Imagen 3-->
+                <div class="class-item">
+                  <img src="IMAGENES/imagen-galeria3.jpg" alt="Imagen 3" class="img">
+                  <h5>Six-Week Beginner Pottery Course</h5>
+                  <p>$495.00</p>
+                </div>
+
+                <!--Imagen 4-->
+                <div class="class-item">
+                  <img src="IMAGENES/imagen-galeria4.jpg" alt="Imagen 4" class="img">
+                  <h5>April One Time Pottery Wheel Throwing Class (Beginners/Intermediate)</h5>
+                  <p>$95.00</p>
+                </div>
+        
+                <!--Imagen 5-->
+                <div class="class-item">
+                  <img src="IMAGENES/imagen-galeria5.jpg" alt="Imagen 5" class="img">
+                  <h5>Mindful Candle Making Workshop</h5>
+                  <p>$50.00</p>
+                </div>
+        
+                <!--Imagen 6-->
+                <div class="class-item">
+                  <img src="IMAGENES/imagen-galeria6.jpg" alt="Imagen 6" class="img">
+                  <h5>Package of 4 Pottery Wheel Sessions</h5>
+                  <p>$295.00</p>
+                </div>
+      
+
+        </section>
+
+
+        <!-- Formulario con Bootstrap-->
+        <section class="ask-question-section text-center py-5"> <!-- text-center: alinear contenido y py-5: para padding vertical-->
+
+            <div class="container">
+            
+              <!-- Titulo-->
+              <h2 class="mb-4">Ask a question</h2> <!-- mb-4: margin-bottom 4-->
+              <p>Please <strong>feel free</strong> to ask any questions you may have <strong>using this form.</strong></p>
+
+              <form>
+                  <!-- Campo de entrada para el correo electronico -->
+                  <div class="mb-3">
+                      <input type="email" class="form-control rounded-4" placeholder="Your email">
+                  </div>
+
+                  <!-- Campo de texto para la pregunta -->
+                  <div class="mb-3">
+                      <textarea class="form-control rounded-4" rows="3" placeholder="Your question"></textarea>
+                  </div>
+
+                  <!-- Boton de envio -->
+                  <button type="submit" class="btn btn-dark rounded-pill px-5">Send</button>
+              </form>
+
+            </div>
+
+            <!-- Clases de Bootstrap
+               form-control: Es la clase de Bootstrap que se aplica a los campos de formulario para estilizarlos.
+               rounded-4 y rounded-pill: Añade bordes redondeados a los inputs y el boton.
+               btn btn-dark: Estiliza el boton de envio con un fondo oscuro y texto blanco.
+               px-5: Añade padding horizontal al boton para que sea mas ancho. -->
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+
+        <!-- Footer parte de arriba-->
+        <div class="footer-content">
+
+            <!--Footer logo-->
+            <div class="footer-logo">
+                <img src="IMAGENES/footer-logo.png" alt="Footer logo" >
+            </div>
+
+            <!--Footer links-->
+            <ul class="footer-links">
+                <li><a href="#">Classes</a></li>
+                <li><a href="#">Private Events</a></li>
+                <li><a href="#">Gift Cards</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">More</a></li>
+            </ul>
+
+            <div class="footer-redes">
+
+                <!--Facebook logo-->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.64l.36-4H14V7a1 1 0 0 1 1-1h3z"/></svg>
+
+                <!--Telegram logo-->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" width="24" height="24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook">
+                <path d="M228.88,26.19a9,9,0,0,0-9.16-1.57L17.06,103.93a14.22,14.22,0,0,0,2.43,27.21L72,141.45V200a15.92,15.92,0,0,0,10,14.83,15.91,15.91,0,0,0,17.51-3.73l25.32-26.26L165,220a15.88,15.88,0,0,0,10.51,4,16.3,16.3,0,0,0,5-.79,15.85,15.85,0,0,0,10.67-11.63L231.77,35A9,9,0,0,0,228.88,26.19Zm-61.14,36L78.15,126.35l-49.6-9.73ZM88,200V152.52l24.79,21.74Zm87.53,8L92.85,135.5l119-85.29Z"/></svg>
+            
+                <!--Instagram logo-->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                  
+            </div>
+
+        </div>
+
+        <!-- Footer parte de abajo-->
+        <div class="footer-bottom">
+            <p>Location: Florida</p>
+            <p>Fort Lauderdale</p>
+        </div>
+
+    </footer>
+   
+    <!--Links JS-->
+    <script src="js/galeria.js"></script> <!--Galería hero-->
+    <script src="js/boton.js"></script> <!--Botón claro/oscuro-->
+    <script src="js/menu.js"></script> <!--Menu hamburguesa-->
+
+ 
+</body>
+</html>

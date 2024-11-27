@@ -1,0 +1,554 @@
+/* ESTILOS GRALES 
+--------------------*/
+* {
+    margin: 0;
+    padding: 0; }
+
+a, ul {
+    text-decoration: none;
+    list-style: none; /* Saca los items */ }
+
+body {
+    font-family: "Poppins", sans-serif; /* Fuente base del cuerpo */ }
+
+
+
+/* NAVEGACION 
+-------------------------------------------------------------------------------------------------------*/
+
+
+.navbar {
+    display: flex; /* Flexbox para alinear los elementos */
+    justify-content: space-between; /* Espacio entre logo, menu e icons */
+    align-items: center;
+    padding: 3px 3px;
+    padding-left: 100px;
+    padding-right: 100px; 
+
+    position: fixed; /* Hace que el navbar quede fijo */
+    top: 0; /* Fija la posición en la parte superior */
+    left: 0; /* Se asegura de que esté alineado a la izquierda */
+    right: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+    background-color: #ffffff; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Opcional: añade un sombreado para destacar */
+    
+}
+
+
+.logo img,
+.footer-logo img {
+    width: 170px;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 60px;
+    padding: 0.8rem 0 0 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {    
+    color: black;
+    font-size: 70%; 
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.nav-links a {    
+    position: relative; /* Necesario para usar ::after */
+    color: black;
+    font-size: 70%; 
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none; /* Elimina el subrayado predeterminado */
+}
+
+/* PSEUDO-ELEMENTO */
+.nav-links a::after {
+    content: ''; /* Crea un contenido vacio que sera la linea */
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* Ubica la linea abajo del texto */
+    width: 0%; /* Inicialmente no visible */
+    height: 2px; /* Altura del subrayado */
+    background-color: black;
+    transition: width 0.3s ease-in-out; /* Transicion para el efecto animado */
+}
+
+/* Animacion de links al hacer hover */
+.nav-links a:hover::after {
+    width: 100%; /* Al hacer hover, la linea crece hasta el ancho completo del link */
+}
+
+.nav-icons {
+    display: flex;
+    gap: 18px;
+}
+
+.icono {
+    width: 28px;
+    cursor: pointer;
+}
+
+/* Menu hamburguesa simulado*/
+
+.abrir-menu,
+.cerrar-menu {
+    display: none;
+    background-color: transparent;
+}
+
+/* RESPONSIVE: Para pantallas pequeñas */
+@media screen and (max-width: 1256px) {
+
+    .navbar {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .nav-links {
+        display: none; /* Oculta el menu de navegacion en pantallas chicas */
+    } 
+
+    .nav-icons {
+        display: none; /* Oculta los iconos */ 
+    }
+
+    .abrir-menu,
+    .cerrar-menu {
+        display: block;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        opacity: 0; 
+        visibility: hidden;
+        
+    }
+
+    .nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-links {
+        display: flex;
+        width: 100px;
+        flex-direction: column;
+        align-items: end;
+        gap: 1.97rem;
+        background-color: #ffffff;
+        padding: 4rem;
+        box-shadow: 0 0 0 400vmax rgba(0, 0, 0, .5);
+        right: 50;
+
+        position: fixed;
+        top: 0%; 
+        right: 0; 
+        width: 50%; 
+        height: 100%; 
+      
+    }
+
+}
+
+
+
+/* ESTILOS BOTON CLARO-OSCURO JS 
+----------------------------------*/
+
+.contenedor {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .contenedor button {
+    padding: 10px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+  }
+
+  button {
+    border: none;
+    background-color: none;
+  }
+  
+  /* Estilo para modo oscuro */
+
+  body.modo-oscuro,
+  body.modo-oscuro .abrir-menu,
+  body.modo-oscuro .cerrar-menu,
+  body.modo-oscuro .navbar {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  button.modo-oscuro {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  body.modo-oscuro .nav-links a {
+    color: white;
+  }
+
+  body.modo-oscuro .nav-links a::after {
+    background-color: white;
+  }
+  
+  body.modo-oscuro .nav-links {
+    background-color: #000000;
+  }
+
+  body.modo-oscuro .ask-question-section {
+    background-color: #735646;
+  }
+
+  body.modo-oscuro .ask-question-section h2,
+  body.modo-oscuro .ask-question-section p  {
+    color: white;
+  }
+
+  body.modo-oscuro .ask-question-section .form-control {
+    background-color: #ffffff;
+
+  }
+
+  
+/* HERO 
+--------------------------------------------------------------------------------------------------------*/
+
+.hero-contenido {
+    width: auto;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    margin-top: 4.5rem;
+
+    /* Configuración de la animación */
+    animation: cambioImagenes 10s infinite; /* Duración y repetición infinita */
+
+}
+
+/* Keyframes para alternar imágenes */
+@keyframes cambioImagenes {
+    0% { background-image: url('../IMAGENES/imagen-hero.jpg'); }
+    25% { background-image: url('../IMAGENES/imagen-hero2.png'); }
+    50% { background-image: url('../IMAGENES/imagen-hero3.png'); }
+    75% { background-image: url('../IMAGENES/imagen-hero4.png'); }
+    100% { background-image: url('../IMAGENES/imagen-hero5.png'); } /* Vuelve al inicio */
+}
+
+
+@media (max-width: 990px) {
+    .hero-contenido h1 {
+        font-size: 32px; 
+        width: 100%; }
+
+    .hero-contenido {
+        height: 400px;
+        padding-left: 2rem; } 
+}
+
+.titulo {
+    color: white;
+    font-size: 45px;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+.hero-boton {
+    background-color: #000000; 
+    color: white;
+    padding: 10px 16px;
+    border-radius: 30px; /* Bordes redondeados */
+    font-size: 14px;
+    font-weight: 500; /* Para que este mas en negrita */
+    text-transform: uppercase;
+    cursor: pointer; 
+}
+
+/* Animacion del boton */
+.hero-boton:hover {
+    background-color: #fff3e6;  /* Cambia el color cuando pasa el cursor */
+    color: #735646;
+    font-weight: bold;
+}
+
+/* Estilos seccion descripcion */
+.descripcion {
+    text-align: center;
+    padding: 50px;
+}
+
+.descripcion p {
+    font-size: 0.9rem;
+    max-width: 680px; /* Limita el ancho maximo del parrafo */
+    margin: 30px auto 15px;
+}
+
+.descripcion a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+
+/* GALERIA IMAGENES 
+--------------------------------------------------------------------------------------------------------*/
+
+.galeria-titulo {
+    text-align: center;
+    padding: 20px 0 0 0; 
+}
+
+.galeria-titulo h2 {
+    font-size: 1.5rem;
+}
+
+.galeria-titulo p {
+    font-size: 0.8rem;
+}
+
+.galeria {
+    display: grid; /* Uso un grid layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño, 1fr indica q cada columna debe ocupar una fracción igual del espacio disponible en el contenedor. */
+    gap: 20px;
+    padding: 0px 20px 20px 20px;
+    max-width: 1330px; 
+    margin: 0 auto;
+}
+
+.class-item {
+    text-align: center; /* Centra el texto */
+}
+
+.class-item img {
+    width: 100%; /* Para que las imags ocupen todo el ancho disponible */
+    height: auto; /* Mantiene la proporcion de la imagen */
+    transition: transform 0.3s ease-in-out; /* Transicion suave para la animacion */
+}
+
+/* Animacion imagen - efecto hover */
+.class-item:hover img {
+    transform: scale(1.05); /* Agranda la imagen un poco cuando se hace hover */
+    cursor: pointer;
+}
+
+.class-item h5 {
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.class-item p {
+    font-weight: bold;
+    color: #000;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE - MEDIA QUERIES GALERIA */
+
+/* TABLET */
+@media (max-width: 768px) {
+    .galeria {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */ }
+}
+
+/* CELULAR */
+@media (max-width: 480px) {
+    .galeria {
+        grid-template-columns: 1fr; /* 1 columna en moviles */ }
+    
+    .galeria-titulo h2 {
+        font-size: 1.3rem; }
+    
+    .galeria-titulo p {
+        font-size: 0.7rem;
+        padding: 0 50px 0 50px; }
+    
+    .class-item h5 {
+        font-size: 0.8rem; }
+    
+    .class-item p {
+        font-size: 0.8rem; }
+
+    .class-item img {
+        width: 80%; }
+}
+
+
+
+
+
+
+/* FORMULARIO (hecho con bootstrap pero personalizado)
+------------------------------------------------------------------------------------------------------------*/
+
+.ask-question-section {
+    background-color: #fff3e6;
+    margin-top: 2rem;
+}
+
+.ask-question-section h2 {
+    color: #735646;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Linea debajo del titulo "ask a question" */
+.ask-question-section h2::after {
+    content: '';
+    display: block;
+    width: 90px; /* Longitud */
+    height: 4px;  /* Grosor */
+    background-color: #735646;
+    margin: 12px auto 0; /* Centrar la linea */
+}
+
+.ask-question-section p {
+    font-size: 1rem;
+    color: #333;
+    max-width: 270px;
+    text-align: center; /* Alinea el texto horizontalmente */
+    margin: 0 auto 30px auto;
+}
+
+.ask-question-section form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+
+    .ask-question-section form {
+        max-width: 80%; /* Para que el form tenga un poco mas de margen en modo celular */ }
+}
+
+.form-control {
+    border: 1.5px solid #735646;
+    padding: 10px;
+    font-size: 0.8rem;
+    background-color: transparent;
+    padding-left: 1rem;
+}
+
+.btn-dark {
+    background-color: #735646; /* Color del boton */
+    font-size: 0.8rem;
+    color: white;
+    margin-top: 1rem;
+    text-transform: uppercase;
+}
+
+
+/* FOOTER 
+---------------------------------------------------------------------------------------------------------*/
+
+.footer {
+    background-color: #000; /* Fondo negro */
+    color: #fff3e6; /* Texto blanco */
+    font-size: 14px;
+    overflow: hidden; /* Evita el desplazamiento horizontal */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Para permitir que los elementos se ajusten en pantallas chicas */
+    text-transform: uppercase;
+    padding: 10px 5%;
+}
+
+.footer-logo h4 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.footer-logo p {
+    margin: 5px 0 0;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding-right: 5rem;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #fff3e6; /* Color blanco para los links */
+    font-size: 0.8rem;
+}
+
+.footer-links a:hover {
+    text-decoration: underline; /* Animacion al pasar el cursor, agrega un subrayado */
+}
+
+.footer-redes {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-redes a img {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 23px 5%;
+    border-top: 0.1px solid #fff3e6;
+    text-transform: uppercase;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 1060px) {
+
+    .footer-content {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */ }
+
+    .footer-links {
+        gap: 10px; /* Ajusta el espacio entre los enlaces */
+        padding: 12px 0 0 0; /* Elimina el padding */ }
+
+    .footer-bottom p,
+    .footer-links a {
+        font-size: 0.6rem; }
+
+    .footer-bottom {
+        padding: 20px 7%; }
+
+    .footer-redes {
+        padding: 20px 0;
+        flex-direction: row; /* Cambia a columna */ }
+}
